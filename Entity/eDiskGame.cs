@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Entity
 {
-    class eDiskGame
+  public  class eDiskGame
     {
         private string maDia;
         private bool choThue;

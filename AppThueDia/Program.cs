@@ -18,7 +18,8 @@ namespace AppThueDia
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmChucNang()); 
+            //Application.Run(new frmChucNang());
+            Application.Run(new frmTieuDe());
         }
     }
 }
