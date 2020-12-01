@@ -51,11 +51,11 @@
     <Compile Include="TieuDeBUS.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\XayDungPhanMem\Data\Data.csproj">
+    <ProjectReference Include="..\Data\Data.csproj">
       <Project>{a0aa8b8f-e1b1-4bf3-a337-54065720369d}</Project>
       <Name>Data</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\XayDungPhanMem\Entity\Entity.csproj">
+    <ProjectReference Include="..\Entity\Entity.csproj">
       <Project>{d9a4d62a-b7b3-46ca-a409-495168e3b2c3}</Project>
       <Name>Entity</Name>
     </ProjectReference>

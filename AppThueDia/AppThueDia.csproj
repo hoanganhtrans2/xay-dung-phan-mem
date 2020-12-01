@@ -164,13 +164,13 @@
     <None Include="Resources\dvdback.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\XayDungPhanMem\Entity\Entity.csproj">
-      <Project>{d9a4d62a-b7b3-46ca-a409-495168e3b2c3}</Project>
-      <Name>Entity</Name>
-    </ProjectReference>
     <ProjectReference Include="..\BUS\BUS.csproj">
       <Project>{5aad6a78-7ac8-4a20-b173-fadf75309d11}</Project>
       <Name>BUS</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Entity\Entity.csproj">
+      <Project>{d9a4d62a-b7b3-46ca-a409-495168e3b2c3}</Project>
+      <Name>Entity</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
