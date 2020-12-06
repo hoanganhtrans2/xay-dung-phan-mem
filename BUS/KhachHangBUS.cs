@@ -23,5 +23,9 @@ namespace BUS
         {
             return dAL.deleteKhachHang(id);
         }
+        public eKhachHang getKhachHangById(string makh)
+        {
+            return dAL.getKhachHangById(makh);
+        }
     }
 }

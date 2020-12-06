@@ -36,6 +36,7 @@
             this.menuTieuDe = new System.Windows.Forms.ToolStripMenuItem();
             this.menuQLDia = new System.Windows.Forms.ToolStripMenuItem();
             this.menuDatTieuDe = new System.Windows.Forms.ToolStripMenuItem();
+            this.huyPhiTraTre = new System.Windows.Forms.ToolStripMenuItem();
             this.ngườiDùngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuDangNhap = new System.Windows.Forms.ToolStripMenuItem();
             this.đăngXuấtToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -63,7 +64,8 @@
             this.menuQLKH,
             this.menuTieuDe,
             this.menuQLDia,
-            this.menuDatTieuDe});
+            this.menuDatTieuDe,
+            this.huyPhiTraTre});
             this.menuChucNang.Name = "menuChucNang";
             this.menuChucNang.Size = new System.Drawing.Size(77, 20);
             this.menuChucNang.Text = "Chức năng";
@@ -109,6 +111,13 @@
             this.menuDatTieuDe.Size = new System.Drawing.Size(180, 22);
             this.menuDatTieuDe.Text = "Đặt tiêu đề";
             this.menuDatTieuDe.Click += new System.EventHandler(this.menuDatTieuDe_Click);
+            // 
+            // huyPhiTraTre
+            // 
+            this.huyPhiTraTre.Name = "huyPhiTraTre";
+            this.huyPhiTraTre.Size = new System.Drawing.Size(180, 22);
+            this.huyPhiTraTre.Text = "Hủy phí trả trễ";
+            this.huyPhiTraTre.Click += new System.EventHandler(this.huyPhiTraTre_Click);
             // 
             // ngườiDùngToolStripMenuItem
             // 
@@ -176,5 +185,6 @@
         private System.Windows.Forms.ToolStripMenuItem menuTraDia;
         private System.Windows.Forms.ToolStripMenuItem menuQLDia;
         private System.Windows.Forms.ToolStripMenuItem menuDatTieuDe;
+        private System.Windows.Forms.ToolStripMenuItem huyPhiTraTre;
     }
 }

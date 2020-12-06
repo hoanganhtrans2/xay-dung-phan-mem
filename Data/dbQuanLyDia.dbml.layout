@@ -1,76 +1,83 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 11.125" name="dbQuanLyDia">
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 9.125" name="dbQuanLyDia">
   <DataContextMoniker Name="/dbQuanLyDiaDataContext" />
   <nestedChildShapes>
-    <classShape Id="4fa51d8c-a842-4d7b-ac42-569cace98105" absoluteBounds="6.25, 6.375, 2, 1.5785953776041666">
+    <classShape Id="fa5bcba0-0608-476b-9dd3-c349f9cf4e78" absoluteBounds="6.25, 3.875, 2, 1.5785953776041666">
       <DataClassMoniker Name="/dbQuanLyDiaDataContext/ChiTietDonHang" />
       <nestedChildShapes>
-        <elementListCompartment Id="6d0f96e0-fce5-409b-9143-b2a23f5b242f" absoluteBounds="6.265, 6.835, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="85e8af20-0f95-4463-b5c6-222df98ee4ac" absoluteBounds="6.265, 4.335, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="da3122d9-de01-43ca-b5a0-a0b239569e03" absoluteBounds="0.75, 0.75, 2, 2.1554996744791666">
-      <DataClassMoniker Name="/dbQuanLyDiaDataContext/TieuDe" />
-      <nestedChildShapes>
-        <elementListCompartment Id="e638b749-0e8a-4c40-be3e-6a12cb9c9f73" absoluteBounds="0.765, 1.21, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="bba0c575-2ece-47fc-8f3d-58754b5b7148" absoluteBounds="3.5, 9.5, 2, 1.3862939453125005">
+    <classShape Id="259a5b65-223d-4096-bde3-82851864c9fe" absoluteBounds="3.5, 3.75, 2, 1.7708968098958327">
       <DataClassMoniker Name="/dbQuanLyDiaDataContext/Disk_Game" />
       <nestedChildShapes>
-        <elementListCompartment Id="de3c0386-c416-49ab-9398-665428f60f53" absoluteBounds="3.515, 9.96, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="b7190fd3-ce4e-4632-ac66-9e1f8c160f83" absoluteBounds="3.515, 4.21, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="ef9c4922-e48e-439b-bb05-b2ab8297e506" absoluteBounds="3.5, 6.125, 2, 2.1554996744791666">
+    <classShape Id="3a2814cd-b46a-4357-b88d-ccd05f2efd67" absoluteBounds="3.5, 6.5, 2, 2.1554996744791675">
       <DataClassMoniker Name="/dbQuanLyDiaDataContext/DonHang" />
       <nestedChildShapes>
-        <elementListCompartment Id="761e5a5a-b06f-4a34-a653-845251a0b7ca" absoluteBounds="3.515, 6.585, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="2f4a8ef3-0891-4450-9064-352be7db2298" absoluteBounds="3.515, 6.96, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="923d8a53-4a03-466f-aaf3-d4c7f5e44fb1" absoluteBounds="3.5, 3, 2, 1.5785953776041666">
+    <classShape Id="a7e5641d-feb8-42c4-9a67-217da6a9e1a0" absoluteBounds="3.5, 0.75, 2, 1.7708968098958331">
       <DataClassMoniker Name="/dbQuanLyDiaDataContext/KH_DatTruoc_TieuDe" />
       <nestedChildShapes>
-        <elementListCompartment Id="6542a1c3-b4a7-4916-aa90-c1ef687d0a2e" absoluteBounds="3.515, 3.46, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="fbad7331-2a7d-4a08-84e5-5cf95815a9c0" absoluteBounds="3.515, 1.21, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="c7a0327f-d8eb-43e7-ba9a-3f1218996550" absoluteBounds="0.75, 4, 2, 1.7708968098958327">
+    <classShape Id="5348d9e4-9daf-4a8f-8fc7-8c6fb795eaf7" absoluteBounds="0.75, 7.125, 2, 1.7708968098958327">
       <DataClassMoniker Name="/dbQuanLyDiaDataContext/KhachHang" />
       <nestedChildShapes>
-        <elementListCompartment Id="888d5bab-3a28-43b2-91f0-e243310e283c" absoluteBounds="0.765, 4.46, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="9dda57bd-ef58-43a7-9816-5abf468622f1" absoluteBounds="0.765, 7.585, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(5.5 : 10.1931469726563); (7.25 : 10.1931469726563); (7.25 : 7.95359537760417)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <classShape Id="873fb3d9-7095-4b7d-87e1-cb1958abd1ef" absoluteBounds="0.75, 3.5, 2, 2.3478011067708335">
+      <DataClassMoniker Name="/dbQuanLyDiaDataContext/TieuDe" />
+      <nestedChildShapes>
+        <elementListCompartment Id="4910fe1e-d416-41f8-a245-70b9dab7de7a" absoluteBounds="0.765, 3.96, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(5.5 : 4.66429768880208); (6.25 : 4.66429768880208)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/dbQuanLyDiaDataContext/Disk_Game/Disk_Game_ChiTietDonHang" />
       <nodes>
-        <classShapeMoniker Id="bba0c575-2ece-47fc-8f3d-58754b5b7148" />
-        <classShapeMoniker Id="4fa51d8c-a842-4d7b-ac42-569cace98105" />
+        <classShapeMoniker Id="259a5b65-223d-4096-bde3-82851864c9fe" />
+        <classShapeMoniker Id="fa5bcba0-0608-476b-9dd3-c349f9cf4e78" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(5.5 : 7.16429768880208); (6.25 : 7.16429768880208)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(5.5 : 7.57774983723958); (7.25 : 7.57774983723958); (7.25 : 5.45359537760417)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/dbQuanLyDiaDataContext/DonHang/DonHang_ChiTietDonHang" />
       <nodes>
-        <classShapeMoniker Id="ef9c4922-e48e-439b-bb05-b2ab8297e506" />
-        <classShapeMoniker Id="4fa51d8c-a842-4d7b-ac42-569cace98105" />
+        <classShapeMoniker Id="3a2814cd-b46a-4357-b88d-ccd05f2efd67" />
+        <classShapeMoniker Id="fa5bcba0-0608-476b-9dd3-c349f9cf4e78" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(2.75 : 1.82774983723958); (4.5 : 1.82774983723958); (4.5 : 3)]" fixedFrom="Algorithm" fixedTo="Algorithm">
-      <AssociationMoniker Name="/dbQuanLyDiaDataContext/TieuDe/TieuDe_KH_DatTruoc_TieuDe" />
-      <nodes>
-        <classShapeMoniker Id="da3122d9-de01-43ca-b5a0-a0b239569e03" />
-        <classShapeMoniker Id="923d8a53-4a03-466f-aaf3-d4c7f5e44fb1" />
-      </nodes>
-    </associationConnector>
-    <associationConnector edgePoints="[(1.75 : 5.77089680989583); (1.75 : 7.20274983723958); (3.5 : 7.20274983723958)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(2.75 : 7.89024983723958); (3.5 : 7.89024983723958)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/dbQuanLyDiaDataContext/KhachHang/KhachHang_DonHang" />
       <nodes>
-        <classShapeMoniker Id="c7a0327f-d8eb-43e7-ba9a-3f1218996550" />
-        <classShapeMoniker Id="ef9c4922-e48e-439b-bb05-b2ab8297e506" />
+        <classShapeMoniker Id="5348d9e4-9daf-4a8f-8fc7-8c6fb795eaf7" />
+        <classShapeMoniker Id="3a2814cd-b46a-4357-b88d-ccd05f2efd67" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(2.75 : 4.28929768880208); (3.5 : 4.28929768880208)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(2.75 : 7.125); (3.125 : 6.75); (3.125 : 1.63544840494792); (3.5 : 1.63544840494792)]" fixedFrom="NotFixed" fixedTo="Algorithm">
       <AssociationMoniker Name="/dbQuanLyDiaDataContext/KhachHang/KhachHang_KH_DatTruoc_TieuDe" />
       <nodes>
-        <classShapeMoniker Id="c7a0327f-d8eb-43e7-ba9a-3f1218996550" />
-        <classShapeMoniker Id="923d8a53-4a03-466f-aaf3-d4c7f5e44fb1" />
+        <classShapeMoniker Id="5348d9e4-9daf-4a8f-8fc7-8c6fb795eaf7" />
+        <classShapeMoniker Id="a7e5641d-feb8-42c4-9a67-217da6a9e1a0" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 4.63544840494792); (3.04166666666667 : 4.63544840494792 : JumpStart); (3.20833333333333 : 4.63544840494792 : JumpEnd); (3.5 : 4.63544840494792)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/dbQuanLyDiaDataContext/TieuDe/TieuDe_Disk_Game" />
+      <nodes>
+        <classShapeMoniker Id="873fb3d9-7095-4b7d-87e1-cb1958abd1ef" />
+        <classShapeMoniker Id="259a5b65-223d-4096-bde3-82851864c9fe" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(1.75 : 3.5); (1.75 : 2.10942510742187); (3.04166666666667 : 2.10942510742187 : JumpStart); (3.20833333333333 : 2.10942510742187 : JumpEnd); (3.5 : 2.10942510742187)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/dbQuanLyDiaDataContext/TieuDe/TieuDe_KH_DatTruoc_TieuDe" />
+      <nodes>
+        <classShapeMoniker Id="873fb3d9-7095-4b7d-87e1-cb1958abd1ef" />
+        <classShapeMoniker Id="a7e5641d-feb8-42c4-9a67-217da6a9e1a0" />
       </nodes>
     </associationConnector>
   </nestedChildShapes>

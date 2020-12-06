@@ -33,9 +33,6 @@ namespace Data
     partial void InsertChiTietDonHang(ChiTietDonHang instance);
     partial void UpdateChiTietDonHang(ChiTietDonHang instance);
     partial void DeleteChiTietDonHang(ChiTietDonHang instance);
-    partial void InsertTieuDe(TieuDe instance);
-    partial void UpdateTieuDe(TieuDe instance);
-    partial void DeleteTieuDe(TieuDe instance);
     partial void InsertDisk_Game(Disk_Game instance);
     partial void UpdateDisk_Game(Disk_Game instance);
     partial void DeleteDisk_Game(Disk_Game instance);
@@ -48,6 +45,9 @@ namespace Data
     partial void InsertKhachHang(KhachHang instance);
     partial void UpdateKhachHang(KhachHang instance);
     partial void DeleteKhachHang(KhachHang instance);
+    partial void InsertTieuDe(TieuDe instance);
+    partial void UpdateTieuDe(TieuDe instance);
+    partial void DeleteTieuDe(TieuDe instance);
     #endregion
 		
 		public dbQuanLyDiaDataContext() : 
@@ -88,14 +88,6 @@ namespace Data
 			}
 		}
 		
-		public System.Data.Linq.Table<TieuDe> TieuDes
-		{
-			get
-			{
-				return this.GetTable<TieuDe>();
-			}
-		}
-		
 		public System.Data.Linq.Table<Disk_Game> Disk_Games
 		{
 			get
@@ -125,6 +117,14 @@ namespace Data
 			get
 			{
 				return this.GetTable<KhachHang>();
+			}
+		}
+		
+		public System.Data.Linq.Table<TieuDe> TieuDes
+		{
+			get
+			{
+				return this.GetTable<TieuDe>();
 			}
 		}
 	}
@@ -345,240 +345,6 @@ namespace Data
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TieuDe")]
-	public partial class TieuDe : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private string _MaTieuDe;
-		
-		private string _TieuDe1;
-		
-		private int _SoLuongDia;
-		
-		private double _GiaThue;
-		
-		private int _SoNgayDuocThue;
-		
-		private string _LoaiDia;
-		
-		private bool _Deleted;
-		
-		private EntitySet<KH_DatTruoc_TieuDe> _KH_DatTruoc_TieuDes;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnMaTieuDeChanging(string value);
-    partial void OnMaTieuDeChanged();
-    partial void OnTieuDe1Changing(string value);
-    partial void OnTieuDe1Changed();
-    partial void OnSoLuongDiaChanging(int value);
-    partial void OnSoLuongDiaChanged();
-    partial void OnGiaThueChanging(double value);
-    partial void OnGiaThueChanged();
-    partial void OnSoNgayDuocThueChanging(int value);
-    partial void OnSoNgayDuocThueChanged();
-    partial void OnLoaiDiaChanging(string value);
-    partial void OnLoaiDiaChanged();
-    partial void OnDeletedChanging(bool value);
-    partial void OnDeletedChanged();
-    #endregion
-		
-		public TieuDe()
-		{
-			this._KH_DatTruoc_TieuDes = new EntitySet<KH_DatTruoc_TieuDe>(new Action<KH_DatTruoc_TieuDe>(this.attach_KH_DatTruoc_TieuDes), new Action<KH_DatTruoc_TieuDe>(this.detach_KH_DatTruoc_TieuDes));
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaTieuDe", DbType="NChar(10) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
-		public string MaTieuDe
-		{
-			get
-			{
-				return this._MaTieuDe;
-			}
-			set
-			{
-				if ((this._MaTieuDe != value))
-				{
-					this.OnMaTieuDeChanging(value);
-					this.SendPropertyChanging();
-					this._MaTieuDe = value;
-					this.SendPropertyChanged("MaTieuDe");
-					this.OnMaTieuDeChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="TieuDe", Storage="_TieuDe1", DbType="NVarChar(200) NOT NULL", CanBeNull=false)]
-		public string TieuDe1
-		{
-			get
-			{
-				return this._TieuDe1;
-			}
-			set
-			{
-				if ((this._TieuDe1 != value))
-				{
-					this.OnTieuDe1Changing(value);
-					this.SendPropertyChanging();
-					this._TieuDe1 = value;
-					this.SendPropertyChanged("TieuDe1");
-					this.OnTieuDe1Changed();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SoLuongDia", DbType="Int NOT NULL")]
-		public int SoLuongDia
-		{
-			get
-			{
-				return this._SoLuongDia;
-			}
-			set
-			{
-				if ((this._SoLuongDia != value))
-				{
-					this.OnSoLuongDiaChanging(value);
-					this.SendPropertyChanging();
-					this._SoLuongDia = value;
-					this.SendPropertyChanged("SoLuongDia");
-					this.OnSoLuongDiaChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GiaThue", DbType="Float NOT NULL")]
-		public double GiaThue
-		{
-			get
-			{
-				return this._GiaThue;
-			}
-			set
-			{
-				if ((this._GiaThue != value))
-				{
-					this.OnGiaThueChanging(value);
-					this.SendPropertyChanging();
-					this._GiaThue = value;
-					this.SendPropertyChanged("GiaThue");
-					this.OnGiaThueChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SoNgayDuocThue", DbType="Int NOT NULL")]
-		public int SoNgayDuocThue
-		{
-			get
-			{
-				return this._SoNgayDuocThue;
-			}
-			set
-			{
-				if ((this._SoNgayDuocThue != value))
-				{
-					this.OnSoNgayDuocThueChanging(value);
-					this.SendPropertyChanging();
-					this._SoNgayDuocThue = value;
-					this.SendPropertyChanged("SoNgayDuocThue");
-					this.OnSoNgayDuocThueChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LoaiDia", DbType="NVarChar(150) NOT NULL", CanBeNull=false)]
-		public string LoaiDia
-		{
-			get
-			{
-				return this._LoaiDia;
-			}
-			set
-			{
-				if ((this._LoaiDia != value))
-				{
-					this.OnLoaiDiaChanging(value);
-					this.SendPropertyChanging();
-					this._LoaiDia = value;
-					this.SendPropertyChanged("LoaiDia");
-					this.OnLoaiDiaChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Deleted", DbType="Bit NOT NULL")]
-		public bool Deleted
-		{
-			get
-			{
-				return this._Deleted;
-			}
-			set
-			{
-				if ((this._Deleted != value))
-				{
-					this.OnDeletedChanging(value);
-					this.SendPropertyChanging();
-					this._Deleted = value;
-					this.SendPropertyChanged("Deleted");
-					this.OnDeletedChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TieuDe_KH_DatTruoc_TieuDe", Storage="_KH_DatTruoc_TieuDes", ThisKey="MaTieuDe", OtherKey="MaTieuDe")]
-		public EntitySet<KH_DatTruoc_TieuDe> KH_DatTruoc_TieuDes
-		{
-			get
-			{
-				return this._KH_DatTruoc_TieuDes;
-			}
-			set
-			{
-				this._KH_DatTruoc_TieuDes.Assign(value);
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_KH_DatTruoc_TieuDes(KH_DatTruoc_TieuDe entity)
-		{
-			this.SendPropertyChanging();
-			entity.TieuDe = this;
-		}
-		
-		private void detach_KH_DatTruoc_TieuDes(KH_DatTruoc_TieuDe entity)
-		{
-			this.SendPropertyChanging();
-			entity.TieuDe = null;
-		}
-	}
-	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Disk_Game")]
 	public partial class Disk_Game : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -587,11 +353,17 @@ namespace Data
 		
 		private string _MaDia;
 		
+		private bool _ChoThue;
+		
 		private string _TrangThai;
+		
+		private System.Nullable<bool> _Deleted;
 		
 		private string _MaTieuDe;
 		
 		private EntitySet<ChiTietDonHang> _ChiTietDonHangs;
+		
+		private EntityRef<TieuDe> _TieuDe;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -599,8 +371,12 @@ namespace Data
     partial void OnCreated();
     partial void OnMaDiaChanging(string value);
     partial void OnMaDiaChanged();
+    partial void OnChoThueChanging(bool value);
+    partial void OnChoThueChanged();
     partial void OnTrangThaiChanging(string value);
     partial void OnTrangThaiChanged();
+    partial void OnDeletedChanging(System.Nullable<bool> value);
+    partial void OnDeletedChanged();
     partial void OnMaTieuDeChanging(string value);
     partial void OnMaTieuDeChanged();
     #endregion
@@ -608,6 +384,7 @@ namespace Data
 		public Disk_Game()
 		{
 			this._ChiTietDonHangs = new EntitySet<ChiTietDonHang>(new Action<ChiTietDonHang>(this.attach_ChiTietDonHangs), new Action<ChiTietDonHang>(this.detach_ChiTietDonHangs));
+			this._TieuDe = default(EntityRef<TieuDe>);
 			OnCreated();
 		}
 		
@@ -631,7 +408,27 @@ namespace Data
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TrangThai", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ChoThue", DbType="Bit NOT NULL")]
+		public bool ChoThue
+		{
+			get
+			{
+				return this._ChoThue;
+			}
+			set
+			{
+				if ((this._ChoThue != value))
+				{
+					this.OnChoThueChanging(value);
+					this.SendPropertyChanging();
+					this._ChoThue = value;
+					this.SendPropertyChanged("ChoThue");
+					this.OnChoThueChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TrangThai", DbType="NVarChar(100)")]
 		public string TrangThai
 		{
 			get
@@ -651,7 +448,27 @@ namespace Data
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaTieuDe", DbType="NChar(10) NOT NULL", CanBeNull=false)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Deleted", DbType="Bit")]
+		public System.Nullable<bool> Deleted
+		{
+			get
+			{
+				return this._Deleted;
+			}
+			set
+			{
+				if ((this._Deleted != value))
+				{
+					this.OnDeletedChanging(value);
+					this.SendPropertyChanging();
+					this._Deleted = value;
+					this.SendPropertyChanged("Deleted");
+					this.OnDeletedChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaTieuDe", DbType="NChar(10)")]
 		public string MaTieuDe
 		{
 			get
@@ -662,6 +479,10 @@ namespace Data
 			{
 				if ((this._MaTieuDe != value))
 				{
+					if (this._TieuDe.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
 					this.OnMaTieuDeChanging(value);
 					this.SendPropertyChanging();
 					this._MaTieuDe = value;
@@ -681,6 +502,40 @@ namespace Data
 			set
 			{
 				this._ChiTietDonHangs.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TieuDe_Disk_Game", Storage="_TieuDe", ThisKey="MaTieuDe", OtherKey="MaTieuDe", IsForeignKey=true)]
+		public TieuDe TieuDe
+		{
+			get
+			{
+				return this._TieuDe.Entity;
+			}
+			set
+			{
+				TieuDe previousValue = this._TieuDe.Entity;
+				if (((previousValue != value) 
+							|| (this._TieuDe.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._TieuDe.Entity = null;
+						previousValue.Disk_Games.Remove(this);
+					}
+					this._TieuDe.Entity = value;
+					if ((value != null))
+					{
+						value.Disk_Games.Add(this);
+						this._MaTieuDe = value.MaTieuDe;
+					}
+					else
+					{
+						this._MaTieuDe = default(string);
+					}
+					this.SendPropertyChanged("TieuDe");
+				}
 			}
 		}
 		
@@ -733,7 +588,7 @@ namespace Data
 		
 		private double _PhiTraTre;
 		
-		private bool _ThanhToanPhiNo;
+		private string _ThanhToanPhiNo;
 		
 		private string _MaKhachHang;
 		
@@ -755,7 +610,7 @@ namespace Data
     partial void OnNgayThueChanged();
     partial void OnPhiTraTreChanging(double value);
     partial void OnPhiTraTreChanged();
-    partial void OnThanhToanPhiNoChanging(bool value);
+    partial void OnThanhToanPhiNoChanging(string value);
     partial void OnThanhToanPhiNoChanged();
     partial void OnMaKhachHangChanging(string value);
     partial void OnMaKhachHangChanged();
@@ -868,8 +723,8 @@ namespace Data
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ThanhToanPhiNo", DbType="Bit NOT NULL")]
-		public bool ThanhToanPhiNo
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ThanhToanPhiNo", DbType="NVarChar(50)")]
+		public string ThanhToanPhiNo
 		{
 			get
 			{
@@ -1006,9 +861,11 @@ namespace Data
 		
 		private string _MaTieuDe;
 		
-		private EntityRef<TieuDe> _TieuDe;
+		private string _MaDia;
 		
 		private EntityRef<KhachHang> _KhachHang;
+		
+		private EntityRef<TieuDe> _TieuDe;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -1022,12 +879,14 @@ namespace Data
     partial void OnMaKhachHangChanged();
     partial void OnMaTieuDeChanging(string value);
     partial void OnMaTieuDeChanged();
+    partial void OnMaDiaChanging(string value);
+    partial void OnMaDiaChanged();
     #endregion
 		
 		public KH_DatTruoc_TieuDe()
 		{
-			this._TieuDe = default(EntityRef<TieuDe>);
 			this._KhachHang = default(EntityRef<KhachHang>);
+			this._TieuDe = default(EntityRef<TieuDe>);
 			OnCreated();
 		}
 		
@@ -1119,36 +978,22 @@ namespace Data
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TieuDe_KH_DatTruoc_TieuDe", Storage="_TieuDe", ThisKey="MaTieuDe", OtherKey="MaTieuDe", IsForeignKey=true)]
-		public TieuDe TieuDe
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaDia", DbType="NChar(10)")]
+		public string MaDia
 		{
 			get
 			{
-				return this._TieuDe.Entity;
+				return this._MaDia;
 			}
 			set
 			{
-				TieuDe previousValue = this._TieuDe.Entity;
-				if (((previousValue != value) 
-							|| (this._TieuDe.HasLoadedOrAssignedValue == false)))
+				if ((this._MaDia != value))
 				{
+					this.OnMaDiaChanging(value);
 					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._TieuDe.Entity = null;
-						previousValue.KH_DatTruoc_TieuDes.Remove(this);
-					}
-					this._TieuDe.Entity = value;
-					if ((value != null))
-					{
-						value.KH_DatTruoc_TieuDes.Add(this);
-						this._MaTieuDe = value.MaTieuDe;
-					}
-					else
-					{
-						this._MaTieuDe = default(string);
-					}
-					this.SendPropertyChanged("TieuDe");
+					this._MaDia = value;
+					this.SendPropertyChanged("MaDia");
+					this.OnMaDiaChanged();
 				}
 			}
 		}
@@ -1183,6 +1028,40 @@ namespace Data
 						this._MaKhachHang = default(string);
 					}
 					this.SendPropertyChanged("KhachHang");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TieuDe_KH_DatTruoc_TieuDe", Storage="_TieuDe", ThisKey="MaTieuDe", OtherKey="MaTieuDe", IsForeignKey=true)]
+		public TieuDe TieuDe
+		{
+			get
+			{
+				return this._TieuDe.Entity;
+			}
+			set
+			{
+				TieuDe previousValue = this._TieuDe.Entity;
+				if (((previousValue != value) 
+							|| (this._TieuDe.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._TieuDe.Entity = null;
+						previousValue.KH_DatTruoc_TieuDes.Remove(this);
+					}
+					this._TieuDe.Entity = value;
+					if ((value != null))
+					{
+						value.KH_DatTruoc_TieuDes.Add(this);
+						this._MaTieuDe = value.MaTieuDe;
+					}
+					else
+					{
+						this._MaTieuDe = default(string);
+					}
+					this.SendPropertyChanged("TieuDe");
 				}
 			}
 		}
@@ -1419,6 +1298,292 @@ namespace Data
 		{
 			this.SendPropertyChanging();
 			entity.KhachHang = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TieuDe")]
+	public partial class TieuDe : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private string _MaTieuDe;
+		
+		private string _TieuDe1;
+		
+		private int _SoLuongDia;
+		
+		private double _GiaThue;
+		
+		private bool _ChoThue;
+		
+		private int _SoNgayDuocThue;
+		
+		private string _LoaiDia;
+		
+		private bool _Deleted;
+		
+		private EntitySet<Disk_Game> _Disk_Games;
+		
+		private EntitySet<KH_DatTruoc_TieuDe> _KH_DatTruoc_TieuDes;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnMaTieuDeChanging(string value);
+    partial void OnMaTieuDeChanged();
+    partial void OnTieuDe1Changing(string value);
+    partial void OnTieuDe1Changed();
+    partial void OnSoLuongDiaChanging(int value);
+    partial void OnSoLuongDiaChanged();
+    partial void OnGiaThueChanging(double value);
+    partial void OnGiaThueChanged();
+    partial void OnChoThueChanging(bool value);
+    partial void OnChoThueChanged();
+    partial void OnSoNgayDuocThueChanging(int value);
+    partial void OnSoNgayDuocThueChanged();
+    partial void OnLoaiDiaChanging(string value);
+    partial void OnLoaiDiaChanged();
+    partial void OnDeletedChanging(bool value);
+    partial void OnDeletedChanged();
+    #endregion
+		
+		public TieuDe()
+		{
+			this._Disk_Games = new EntitySet<Disk_Game>(new Action<Disk_Game>(this.attach_Disk_Games), new Action<Disk_Game>(this.detach_Disk_Games));
+			this._KH_DatTruoc_TieuDes = new EntitySet<KH_DatTruoc_TieuDe>(new Action<KH_DatTruoc_TieuDe>(this.attach_KH_DatTruoc_TieuDes), new Action<KH_DatTruoc_TieuDe>(this.detach_KH_DatTruoc_TieuDes));
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaTieuDe", DbType="NChar(10) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		public string MaTieuDe
+		{
+			get
+			{
+				return this._MaTieuDe;
+			}
+			set
+			{
+				if ((this._MaTieuDe != value))
+				{
+					this.OnMaTieuDeChanging(value);
+					this.SendPropertyChanging();
+					this._MaTieuDe = value;
+					this.SendPropertyChanged("MaTieuDe");
+					this.OnMaTieuDeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="TieuDe", Storage="_TieuDe1", DbType="NVarChar(200) NOT NULL", CanBeNull=false)]
+		public string TieuDe1
+		{
+			get
+			{
+				return this._TieuDe1;
+			}
+			set
+			{
+				if ((this._TieuDe1 != value))
+				{
+					this.OnTieuDe1Changing(value);
+					this.SendPropertyChanging();
+					this._TieuDe1 = value;
+					this.SendPropertyChanged("TieuDe1");
+					this.OnTieuDe1Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SoLuongDia", DbType="Int NOT NULL")]
+		public int SoLuongDia
+		{
+			get
+			{
+				return this._SoLuongDia;
+			}
+			set
+			{
+				if ((this._SoLuongDia != value))
+				{
+					this.OnSoLuongDiaChanging(value);
+					this.SendPropertyChanging();
+					this._SoLuongDia = value;
+					this.SendPropertyChanged("SoLuongDia");
+					this.OnSoLuongDiaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GiaThue", DbType="Float NOT NULL")]
+		public double GiaThue
+		{
+			get
+			{
+				return this._GiaThue;
+			}
+			set
+			{
+				if ((this._GiaThue != value))
+				{
+					this.OnGiaThueChanging(value);
+					this.SendPropertyChanging();
+					this._GiaThue = value;
+					this.SendPropertyChanged("GiaThue");
+					this.OnGiaThueChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ChoThue", DbType="Bit NOT NULL")]
+		public bool ChoThue
+		{
+			get
+			{
+				return this._ChoThue;
+			}
+			set
+			{
+				if ((this._ChoThue != value))
+				{
+					this.OnChoThueChanging(value);
+					this.SendPropertyChanging();
+					this._ChoThue = value;
+					this.SendPropertyChanged("ChoThue");
+					this.OnChoThueChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SoNgayDuocThue", DbType="Int NOT NULL")]
+		public int SoNgayDuocThue
+		{
+			get
+			{
+				return this._SoNgayDuocThue;
+			}
+			set
+			{
+				if ((this._SoNgayDuocThue != value))
+				{
+					this.OnSoNgayDuocThueChanging(value);
+					this.SendPropertyChanging();
+					this._SoNgayDuocThue = value;
+					this.SendPropertyChanged("SoNgayDuocThue");
+					this.OnSoNgayDuocThueChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LoaiDia", DbType="NVarChar(150) NOT NULL", CanBeNull=false)]
+		public string LoaiDia
+		{
+			get
+			{
+				return this._LoaiDia;
+			}
+			set
+			{
+				if ((this._LoaiDia != value))
+				{
+					this.OnLoaiDiaChanging(value);
+					this.SendPropertyChanging();
+					this._LoaiDia = value;
+					this.SendPropertyChanged("LoaiDia");
+					this.OnLoaiDiaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Deleted", DbType="Bit NOT NULL")]
+		public bool Deleted
+		{
+			get
+			{
+				return this._Deleted;
+			}
+			set
+			{
+				if ((this._Deleted != value))
+				{
+					this.OnDeletedChanging(value);
+					this.SendPropertyChanging();
+					this._Deleted = value;
+					this.SendPropertyChanged("Deleted");
+					this.OnDeletedChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TieuDe_Disk_Game", Storage="_Disk_Games", ThisKey="MaTieuDe", OtherKey="MaTieuDe")]
+		public EntitySet<Disk_Game> Disk_Games
+		{
+			get
+			{
+				return this._Disk_Games;
+			}
+			set
+			{
+				this._Disk_Games.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TieuDe_KH_DatTruoc_TieuDe", Storage="_KH_DatTruoc_TieuDes", ThisKey="MaTieuDe", OtherKey="MaTieuDe")]
+		public EntitySet<KH_DatTruoc_TieuDe> KH_DatTruoc_TieuDes
+		{
+			get
+			{
+				return this._KH_DatTruoc_TieuDes;
+			}
+			set
+			{
+				this._KH_DatTruoc_TieuDes.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_Disk_Games(Disk_Game entity)
+		{
+			this.SendPropertyChanging();
+			entity.TieuDe = this;
+		}
+		
+		private void detach_Disk_Games(Disk_Game entity)
+		{
+			this.SendPropertyChanging();
+			entity.TieuDe = null;
+		}
+		
+		private void attach_KH_DatTruoc_TieuDes(KH_DatTruoc_TieuDe entity)
+		{
+			this.SendPropertyChanging();
+			entity.TieuDe = this;
+		}
+		
+		private void detach_KH_DatTruoc_TieuDes(KH_DatTruoc_TieuDe entity)
+		{
+			this.SendPropertyChanging();
+			entity.TieuDe = null;
 		}
 	}
 }

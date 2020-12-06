@@ -49,9 +49,6 @@
             this.btnXoa = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.dgvDia = new System.Windows.Forms.DataGridView();
-            this.MaDia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MaTieuDe = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label6 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -139,6 +136,7 @@
             // 
             // cbLoaiDia
             // 
+            this.cbLoaiDia.Enabled = false;
             this.cbLoaiDia.FormattingEnabled = true;
             this.cbLoaiDia.Location = new System.Drawing.Point(455, 137);
             this.cbLoaiDia.Name = "cbLoaiDia";
@@ -147,6 +145,7 @@
             // 
             // cbTrangThai
             // 
+            this.cbTrangThai.Enabled = false;
             this.cbTrangThai.FormattingEnabled = true;
             this.cbTrangThai.Location = new System.Drawing.Point(145, 97);
             this.cbTrangThai.Name = "cbTrangThai";
@@ -255,37 +254,18 @@
             // dgvDia
             // 
             this.dgvDia.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDia.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.MaDia,
-            this.TrangThai,
-            this.MaTieuDe});
             this.dgvDia.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvDia.Location = new System.Drawing.Point(3, 22);
             this.dgvDia.Name = "dgvDia";
+            this.dgvDia.ReadOnly = true;
             this.dgvDia.RowTemplate.Height = 28;
+            this.dgvDia.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvDia.Size = new System.Drawing.Size(1271, 317);
             this.dgvDia.TabIndex = 0;
-            // 
-            // MaDia
-            // 
-            this.MaDia.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.MaDia.HeaderText = "Mã đĩa";
-            this.MaDia.Name = "MaDia";
-            this.MaDia.ReadOnly = true;
-            // 
-            // TrangThai
-            // 
-            this.TrangThai.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.TrangThai.HeaderText = "Trạng thái";
-            this.TrangThai.Name = "TrangThai";
-            this.TrangThai.ReadOnly = true;
-            // 
-            // MaTieuDe
-            // 
-            this.MaTieuDe.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.MaTieuDe.HeaderText = "Mã tiêu đề";
-            this.MaTieuDe.Name = "MaTieuDe";
-            this.MaTieuDe.ReadOnly = true;
+            this.dgvDia.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDia_CellClick);
+            this.dgvDia.CellStateChanged += new System.Windows.Forms.DataGridViewCellStateChangedEventHandler(this.dgvDia_CellStateChanged);
+            this.dgvDia.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDia_CellValueChanged);
+            this.dgvDia.Click += new System.EventHandler(this.dgvDia_Click);
             // 
             // label6
             // 
@@ -314,6 +294,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmDia";
             this.Text = "frmThueDia";
+            this.Load += new System.EventHandler(this.frmDia_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -347,8 +328,5 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.DataGridView dgvDia;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MaDia;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TrangThai;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MaTieuDe;
     }
 }

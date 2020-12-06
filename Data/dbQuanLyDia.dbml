@@ -10,24 +10,15 @@
       <Association Name="DonHang_ChiTietDonHang" Member="DonHang" ThisKey="MaDonHang" OtherKey="MaDonHang" Type="DonHang" IsForeignKey="true" />
     </Type>
   </Table>
-  <Table Name="dbo.TieuDe" Member="TieuDes">
-    <Type Name="TieuDe">
-      <Column Name="MaTieuDe" Type="System.String" DbType="NChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="TieuDe" Member="TieuDe1" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
-      <Column Name="SoLuongDia" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="GiaThue" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
-      <Column Name="SoNgayDuocThue" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="LoaiDia" Type="System.String" DbType="NVarChar(150) NOT NULL" CanBeNull="false" />
-      <Column Name="Deleted" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
-      <Association Name="TieuDe_KH_DatTruoc_TieuDe" Member="KH_DatTruoc_TieuDes" ThisKey="MaTieuDe" OtherKey="MaTieuDe" Type="KH_DatTruoc_TieuDe" />
-    </Type>
-  </Table>
   <Table Name="dbo.Disk_Game" Member="Disk_Games">
     <Type Name="Disk_Game">
       <Column Name="MaDia" Type="System.String" DbType="NChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="TrangThai" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
-      <Column Name="MaTieuDe" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="ChoThue" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="TrangThai" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Deleted" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="MaTieuDe" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
       <Association Name="Disk_Game_ChiTietDonHang" Member="ChiTietDonHangs" ThisKey="MaDia" OtherKey="MaDia" Type="ChiTietDonHang" />
+      <Association Name="TieuDe_Disk_Game" Member="TieuDe" ThisKey="MaTieuDe" OtherKey="MaTieuDe" Type="TieuDe" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.DonHang" Member="DonHangs">
@@ -37,7 +28,7 @@
       <Column Name="NgayTraDia" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
       <Column Name="NgayThue" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
       <Column Name="PhiTraTre" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
-      <Column Name="ThanhToanPhiNo" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="ThanhToanPhiNo" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="MaKhachHang" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
       <Association Name="DonHang_ChiTietDonHang" Member="ChiTietDonHangs" ThisKey="MaDonHang" OtherKey="MaDonHang" Type="ChiTietDonHang" />
       <Association Name="KhachHang_DonHang" Member="KhachHang" ThisKey="MaKhachHang" OtherKey="MaKhachHang" Type="KhachHang" IsForeignKey="true" />
@@ -49,8 +40,9 @@
       <Column Name="NgayDatHang" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
       <Column Name="MaKhachHang" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
       <Column Name="MaTieuDe" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
-      <Association Name="TieuDe_KH_DatTruoc_TieuDe" Member="TieuDe" ThisKey="MaTieuDe" OtherKey="MaTieuDe" Type="TieuDe" IsForeignKey="true" />
+      <Column Name="MaDia" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
       <Association Name="KhachHang_KH_DatTruoc_TieuDe" Member="KhachHang" ThisKey="MaKhachHang" OtherKey="MaKhachHang" Type="KhachHang" IsForeignKey="true" />
+      <Association Name="TieuDe_KH_DatTruoc_TieuDe" Member="TieuDe" ThisKey="MaTieuDe" OtherKey="MaTieuDe" Type="TieuDe" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.KhachHang" Member="KhachHangs">
@@ -62,6 +54,20 @@
       <Column Name="TenKhachHang" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
       <Association Name="KhachHang_DonHang" Member="DonHangs" ThisKey="MaKhachHang" OtherKey="MaKhachHang" Type="DonHang" />
       <Association Name="KhachHang_KH_DatTruoc_TieuDe" Member="KH_DatTruoc_TieuDes" ThisKey="MaKhachHang" OtherKey="MaKhachHang" Type="KH_DatTruoc_TieuDe" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TieuDe" Member="TieuDes">
+    <Type Name="TieuDe">
+      <Column Name="MaTieuDe" Type="System.String" DbType="NChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TieuDe" Member="TieuDe1" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="SoLuongDia" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="GiaThue" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="ChoThue" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="SoNgayDuocThue" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="LoaiDia" Type="System.String" DbType="NVarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="Deleted" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="TieuDe_Disk_Game" Member="Disk_Games" ThisKey="MaTieuDe" OtherKey="MaTieuDe" Type="Disk_Game" />
+      <Association Name="TieuDe_KH_DatTruoc_TieuDe" Member="KH_DatTruoc_TieuDes" ThisKey="MaTieuDe" OtherKey="MaTieuDe" Type="KH_DatTruoc_TieuDe" />
     </Type>
   </Table>
 </Database>

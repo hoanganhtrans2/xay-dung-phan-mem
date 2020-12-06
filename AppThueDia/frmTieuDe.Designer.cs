@@ -35,6 +35,7 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnShowAll = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnXoa = new System.Windows.Forms.Button();
             this.cbLoaiDia = new System.Windows.Forms.ComboBox();
             this.txtSoNgay = new System.Windows.Forms.TextBox();
             this.btnSuaTD = new System.Windows.Forms.Button();
@@ -69,6 +70,7 @@
             this.dgvDSDia.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvDSDia.Size = new System.Drawing.Size(1271, 357);
             this.dgvDSDia.TabIndex = 0;
+            this.dgvDSDia.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDSDia_CellClick);
             this.dgvDSDia.Click += new System.EventHandler(this.dgvDSDia_Click);
             // 
             // label1
@@ -120,6 +122,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.btnXoa);
             this.groupBox2.Controls.Add(this.cbLoaiDia);
             this.groupBox2.Controls.Add(this.txtSoNgay);
             this.groupBox2.Controls.Add(this.btnSuaTD);
@@ -141,10 +144,20 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Thông tin chi tiết";
             // 
+            // btnXoa
+            // 
+            this.btnXoa.Location = new System.Drawing.Point(232, 210);
+            this.btnXoa.Name = "btnXoa";
+            this.btnXoa.Size = new System.Drawing.Size(99, 36);
+            this.btnXoa.TabIndex = 12;
+            this.btnXoa.Text = "Xóa Tiêu Đề";
+            this.btnXoa.UseVisualStyleBackColor = true;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
+            // 
             // cbLoaiDia
             // 
             this.cbLoaiDia.FormattingEnabled = true;
-            this.cbLoaiDia.Location = new System.Drawing.Point(468, 113);
+            this.cbLoaiDia.Location = new System.Drawing.Point(468, 102);
             this.cbLoaiDia.Name = "cbLoaiDia";
             this.cbLoaiDia.Size = new System.Drawing.Size(171, 27);
             this.cbLoaiDia.TabIndex = 11;
@@ -152,7 +165,7 @@
             // txtSoNgay
             // 
             this.txtSoNgay.Enabled = false;
-            this.txtSoNgay.Location = new System.Drawing.Point(215, 110);
+            this.txtSoNgay.Location = new System.Drawing.Point(215, 99);
             this.txtSoNgay.Name = "txtSoNgay";
             this.txtSoNgay.Size = new System.Drawing.Size(116, 26);
             this.txtSoNgay.TabIndex = 8;
@@ -180,7 +193,7 @@
             // txtTrangThai
             // 
             this.txtTrangThai.Enabled = false;
-            this.txtTrangThai.Location = new System.Drawing.Point(215, 186);
+            this.txtTrangThai.Location = new System.Drawing.Point(215, 175);
             this.txtTrangThai.Name = "txtTrangThai";
             this.txtTrangThai.Size = new System.Drawing.Size(116, 26);
             this.txtTrangThai.TabIndex = 9;
@@ -188,7 +201,7 @@
             // txtSoLuong
             // 
             this.txtSoLuong.Enabled = false;
-            this.txtSoLuong.Location = new System.Drawing.Point(215, 149);
+            this.txtSoLuong.Location = new System.Drawing.Point(215, 138);
             this.txtSoLuong.Name = "txtSoLuong";
             this.txtSoLuong.Size = new System.Drawing.Size(116, 26);
             this.txtSoLuong.TabIndex = 9;
@@ -196,7 +209,7 @@
             // txtGiaThue
             // 
             this.txtGiaThue.Enabled = false;
-            this.txtGiaThue.Location = new System.Drawing.Point(215, 74);
+            this.txtGiaThue.Location = new System.Drawing.Point(215, 63);
             this.txtGiaThue.Name = "txtGiaThue";
             this.txtGiaThue.Size = new System.Drawing.Size(202, 26);
             this.txtGiaThue.TabIndex = 9;
@@ -204,7 +217,7 @@
             // txtTieuDe
             // 
             this.txtTieuDe.Enabled = false;
-            this.txtTieuDe.Location = new System.Drawing.Point(215, 34);
+            this.txtTieuDe.Location = new System.Drawing.Point(215, 23);
             this.txtTieuDe.Name = "txtTieuDe";
             this.txtTieuDe.Size = new System.Drawing.Size(276, 26);
             this.txtTieuDe.TabIndex = 10;
@@ -212,7 +225,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(109, 189);
+            this.label8.Location = new System.Drawing.Point(109, 178);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(71, 19);
             this.label8.TabIndex = 4;
@@ -221,7 +234,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(74, 115);
+            this.label4.Location = new System.Drawing.Point(74, 104);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(106, 19);
             this.label4.TabIndex = 3;
@@ -230,7 +243,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(113, 152);
+            this.label7.Location = new System.Drawing.Point(113, 141);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(67, 19);
             this.label7.TabIndex = 4;
@@ -239,7 +252,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(118, 77);
+            this.label3.Location = new System.Drawing.Point(118, 66);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(62, 19);
             this.label3.TabIndex = 4;
@@ -248,7 +261,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(364, 115);
+            this.label5.Location = new System.Drawing.Point(364, 104);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(61, 19);
             this.label5.TabIndex = 5;
@@ -257,7 +270,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(124, 37);
+            this.label2.Location = new System.Drawing.Point(124, 26);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(56, 19);
             this.label2.TabIndex = 6;
@@ -338,5 +351,6 @@
         private System.Windows.Forms.TextBox txtTrangThai;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.ComboBox cbLoaiDia;
+        private System.Windows.Forms.Button btnXoa;
     }
 }

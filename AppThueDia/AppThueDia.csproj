@@ -61,6 +61,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmBaoCaoTieuDe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBaoCaoTieuDe.Designer.cs">
+      <DependentUpon>frmBaoCaoTieuDe.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmChucNang.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -84,6 +90,12 @@
     </Compile>
     <Compile Include="frmDatTieuDe.Designer.cs">
       <DependentUpon>frmDatTieuDe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmHuyKhoanPhiTre.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmHuyKhoanPhiTre.Designer.cs">
+      <DependentUpon>frmHuyKhoanPhiTre.cs</DependentUpon>
     </Compile>
     <Compile Include="frmTraDia.cs">
       <SubType>Form</SubType>
@@ -111,6 +123,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmBaoCaoTieuDe.resx">
+      <DependentUpon>frmBaoCaoTieuDe.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmChucNang.resx">
       <DependentUpon>frmChucNang.cs</DependentUpon>
     </EmbeddedResource>
@@ -122,6 +137,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmDatTieuDe.resx">
       <DependentUpon>frmDatTieuDe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmHuyKhoanPhiTre.resx">
+      <DependentUpon>frmHuyKhoanPhiTre.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmTraDia.resx">
       <DependentUpon>frmTraDia.cs</DependentUpon>

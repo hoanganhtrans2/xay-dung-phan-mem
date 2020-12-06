@@ -23,6 +23,10 @@ namespace BUS
         {
             return deDAL.getAllTieuDe();
         }
+        public bool deleteTieuDe(string id)
+        {
+            return deDAL.deleteTieuDe(id);
+        }
 
     }
 }

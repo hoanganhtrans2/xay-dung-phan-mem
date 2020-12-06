@@ -95,5 +95,15 @@ namespace AppThueDia
             f.Dock = DockStyle.Fill;
             f.Show();
         }
+
+        private void huyPhiTraTre_Click(object sender, EventArgs e)
+        {
+            pnMain.Controls.Clear();
+            frmHuyKhoanPhiTre f = new frmHuyKhoanPhiTre();
+            f.TopLevel = false;
+            pnMain.Controls.Add(f);
+            f.Dock = DockStyle.Fill;
+            f.Show();
+        }
     }
 }

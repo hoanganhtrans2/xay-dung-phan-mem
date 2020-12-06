@@ -27,28 +27,31 @@ namespace AppThueDia
             tieuDeBUS = new TieuDeBUS();
             bsTieuDe = new BindingSource();
             lsTieuDe = new List<eTieuDe>();
-            loaiDia = new List<string>() { "DVD", "moive" };
+            loaiDia = new List<string>() { "DVD", "MOVIE" };
             cbLoaiDia.DataSource = loaiDia;
             bsTieuDe.DataSource = tieuDeBUS.getAllTieuDe();
             dgvDSDia.DataSource = bsTieuDe;
-            
+            CustomGirdView();
+
         }
         private void btnThemTD_Click(object sender, EventArgs e)
         {
-            
+
             choPhepNhapThongTin();
-            if (btnThemTD.Text=="Lưu Lại")
+            if (btnThemTD.Text == "Lưu Lại")
             {
-                eTieuDe tieuDe = taoTieuDe();
+
                 if (kiemTraThongTinNhap())
                 {
+                    eTieuDe tieuDe = taoTieuDe();
                     if (tieuDeBUS.themTieuDe(tieuDe))
                     {
                         voHieuNhapThongTin();
                         btnThemTD.Text = "Thêm";
                         btnSuaTD.Text = "Sửa";
                         MessageBox.Show("Thêm tiêu đề mới thành công");
-
+                        bsTieuDe.DataSource = tieuDeBUS.getAllTieuDe();
+                        dgvDSDia.DataSource = bsTieuDe;
                     }
                     else
                     {
@@ -59,33 +62,31 @@ namespace AppThueDia
                 {
                     MessageBox.Show("Nhập sai thông tin");
                 }
-            }else
+            }
+            else
             {
                 btnThemTD.Text = "Lưu Lại";
                 btnSuaTD.Text = "Hủy";
             }
-            
+
         }
         public void CustomGirdView()
         {
             dgvDSDia.Dock = DockStyle.Fill;
             dgvDSDia.AutoSizeColumnsMode =
-        DataGridViewAutoSizeColumnsMode.AllCells;
+            DataGridViewAutoSizeColumnsMode.AllCells;
+           // dgvDSDia.Columns["Deleted"].Visible = false;
 
         }
         public bool kiemTraThongTinNhap()
         {
-            return true;
+            if (taoTieuDe() != null) return true;
+            return false;
         }
 
         public void choPhepNhapThongTin()
         {
-            txtGiaThue.Text = "";
-            txtSoLuong.Text = "";
-            txtTieuDe.Text = "";
-            txtSoNgay.Text = "";
-            cbLoaiDia.Text = "";
-            txtTrangThai.Text = "";
+
             txtTieuDe.Enabled = true;
             txtGiaThue.Enabled = true;
             txtSoNgay.Enabled = true;
@@ -93,7 +94,7 @@ namespace AppThueDia
             txtMaDia.Enabled = true;
             txtSoLuong.Text = "0";
             txtTrangThai.Text = "Nhập mới";
-            
+
         }
         public void voHieuNhapThongTin()
         {
@@ -109,18 +110,25 @@ namespace AppThueDia
             txtTrangThai.Enabled = false;
             txtMaDia.Enabled = true;
             txtSoLuong.Text = "";
-            List<string> loaiDia = new List<string>() { "DVD", "moive" };
+            List<string> loaiDia = new List<string>() { "DVD", "MOVIE" };
             cbLoaiDia.DataSource = loaiDia;
         }
 
         public eTieuDe taoTieuDe()
         {
-           eTieuDe etieuDe = new eTieuDe();
-            etieuDe.TieuDe = txtTieuDe.Text;
-            etieuDe.GiaThue = float.Parse(txtGiaThue.Text);
-            etieuDe.Deleted = false;
-            etieuDe.SoNgayDuocThue = int.Parse(txtSoNgay.Text);
-            etieuDe.LoaiDia = cbLoaiDia.Text;
+            eTieuDe etieuDe = new eTieuDe();
+            try
+            {
+                etieuDe.TieuDe = txtTieuDe.Text;
+                etieuDe.GiaThue = float.Parse(txtGiaThue.Text);
+                etieuDe.Deleted = false;
+                etieuDe.SoNgayDuocThue = int.Parse(txtSoNgay.Text);
+                etieuDe.LoaiDia = cbLoaiDia.Text;
+            }
+            catch
+            {
+                return null;
+            }
             return etieuDe;
         }
 
@@ -137,13 +145,13 @@ namespace AppThueDia
         {
 
         }
-
+        eTieuDe currenTieuDe;
         private void dgvDSDia_Click(object sender, EventArgs e)
         {
             try
             {
                 eTieuDe tieuDe = (eTieuDe)bsTieuDe.Current;
-
+                currenTieuDe = tieuDe;
                 capNhatThongTinVaoTextBox(tieuDe);
             }
             catch
@@ -160,6 +168,51 @@ namespace AppThueDia
                 btnThemTD.Text = "Thêm";
                 btnSuaTD.Text = "Sửa";
                 voHieuNhapThongTin();
+            }
+        }
+
+        private void btnXoa_Click(object sender, EventArgs e)
+        {
+            eTieuDe tieuDe = currenTieuDe;
+            if (tieuDe.MaTieuDe.Length > 0)
+            {
+                DialogResult dlgHoiXoa;
+                dlgHoiXoa = MessageBox.Show("Xác nhận xóa tiêu đề " + tieuDe.TieuDe, "Hỏi xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
+                if (dlgHoiXoa == DialogResult.Yes)
+                {
+
+                    if (tieuDeBUS.deleteTieuDe(tieuDe.MaTieuDe))
+                    {
+                        MessageBox.Show("Xóa thành công");
+                        bsTieuDe.DataSource = tieuDeBUS.getAllTieuDe();
+                        dgvDSDia.DataSource = bsTieuDe;
+                    }
+                    else MessageBox.Show("Xóa thất bại");
+
+                }
+            }
+        }
+
+        private void dgvDSDia_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+           
+            if (e.ColumnIndex==6)
+            {
+                eTieuDe tieuDe = currenTieuDe;
+                DialogResult dlgHoiXoa;
+                dlgHoiXoa = MessageBox.Show("Xác nhận xóa tiêu đề " + tieuDe.TieuDe, "Hỏi xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
+                if (dlgHoiXoa == DialogResult.Yes)
+                {
+                   
+                    if (tieuDeBUS.deleteTieuDe(tieuDe.MaTieuDe))
+                    {
+                        MessageBox.Show("Xóa thành công");
+                        bsTieuDe.DataSource = tieuDeBUS.getAllTieuDe();
+                        dgvDSDia.DataSource = bsTieuDe;
+                    }
+                    else MessageBox.Show("Xóa thất bại");
+
+                }
             }
         }
     }

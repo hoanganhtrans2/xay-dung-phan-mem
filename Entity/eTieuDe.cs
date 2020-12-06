@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,7 +14,7 @@ namespace Entity
         private string tieuDe;
         private int soLuongDia;
         private float giatHue;
-        private bool choThue;
+       
         private int soNgayDuocThue;
         private string loaiDia;
         private bool deleted;
@@ -33,7 +34,7 @@ namespace Entity
         [DisplayName("Loại Đĩa")]
         public string LoaiDia { get => loaiDia; set => loaiDia = value; }
 
-
+        [Display(Order=-1)]
         public bool Deleted { get => deleted; set => deleted = value; }
     }
 }

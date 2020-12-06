@@ -28,6 +28,22 @@ namespace Data
             return ls;
         }
 
+        public eKhachHang getKhachHangById(string makh)
+        {
+            eKhachHang khachHang = new eKhachHang();
+            var kHang = db.KhachHangs.Where(kh => kh.MaKhachHang.Trim() == makh.Trim()).FirstOrDefault();
+            if (kHang != null)
+            {
+                khachHang.MaKhachHang = kHang.MaKhachHang;
+                khachHang.TenKhachHang = kHang.TenKhachHang;
+                khachHang.SoDienThoai = kHang.SoDienThoai;
+                khachHang.DiaChi = kHang.DiaChi;
+                return khachHang;
+            }
+            return null;
+        }
+
+
         public bool deleteKhachHang(string id)
         {
             KhachHang khachHang = new KhachHang();
